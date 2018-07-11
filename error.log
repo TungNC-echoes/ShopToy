@@ -1,0 +1,18 @@
+[Tue Jul 10 15:26:01.451639 2018] [:error] [pid 19462] [client 127.0.0.1:50438] PHP Notice:  date_default_timezone_set(): Timezone ID 'Asia/Ha_Noi' is invalid in /var/www/html/ShopToy/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php on line 49
+[Tue Jul 10 15:26:01.451707 2018] [:error] [pid 19462] [client 127.0.0.1:50438] PHP Stack trace:
+[Tue Jul 10 15:26:01.451721 2018] [:error] [pid 19462] [client 127.0.0.1:50438] PHP   1. {main}() /var/www/html/ShopToy/public/index.php:0
+[Tue Jul 10 15:26:01.451728 2018] [:error] [pid 19462] [client 127.0.0.1:50438] PHP   2. Illuminate\\Foundation\\Http\\Kernel->handle() /var/www/html/ShopToy/public/index.php:55
+[Tue Jul 10 15:26:01.451733 2018] [:error] [pid 19462] [client 127.0.0.1:50438] PHP   3. Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter() /var/www/html/ShopToy/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+[Tue Jul 10 15:26:01.451738 2018] [:error] [pid 19462] [client 127.0.0.1:50438] PHP   4. Illuminate\\Foundation\\Http\\Kernel->bootstrap() /var/www/html/ShopToy/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:146
+[Tue Jul 10 15:26:01.451743 2018] [:error] [pid 19462] [client 127.0.0.1:50438] PHP   5. Illuminate\\Foundation\\Application->bootstrapWith() /var/www/html/ShopToy/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:162
+[Tue Jul 10 15:26:01.451747 2018] [:error] [pid 19462] [client 127.0.0.1:50438] PHP   6. Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->bootstrap() /var/www/html/ShopToy/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:213
+[Tue Jul 10 15:26:01.451751 2018] [:error] [pid 19462] [client 127.0.0.1:50438] PHP   7. date_default_timezone_set() /var/www/html/ShopToy/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php:49
+[Tue Jul 10 15:38:54.471798 2018] [:error] [pid 19463] [client 127.0.0.1:56954] PHP Notice:  date_default_timezone_set(): Timezone ID 'Asia/Ha_Noi' is invalid in /var/www/html/ShopToy/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php on line 49
+[Tue Jul 10 15:38:54.471826 2018] [:error] [pid 19463] [client 127.0.0.1:56954] PHP Stack trace:
+[Tue Jul 10 15:38:54.471832 2018] [:error] [pid 19463] [client 127.0.0.1:56954] PHP   1. {main}() /var/www/html/ShopToy/public/index.php:0
+[Tue Jul 10 15:38:54.471836 2018] [:error] [pid 19463] [client 127.0.0.1:56954] PHP   2. Illuminate\\Foundation\\Http\\Kernel->handle() /var/www/html/ShopToy/public/index.php:55
+[Tue Jul 10 15:38:54.471840 2018] [:error] [pid 19463] [client 127.0.0.1:56954] PHP   3. Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter() /var/www/html/ShopToy/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:116
+[Tue Jul 10 15:38:54.471854 2018] [:error] [pid 19463] [client 127.0.0.1:56954] PHP   4. Illuminate\\Foundation\\Http\\Kernel->bootstrap() /var/www/html/ShopToy/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:146
+[Tue Jul 10 15:38:54.471857 2018] [:error] [pid 19463] [client 127.0.0.1:56954] PHP   5. Illuminate\\Foundation\\Application->bootstrapWith() /var/www/html/ShopToy/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:162
+[Tue Jul 10 15:38:54.471861 2018] [:error] [pid 19463] [client 127.0.0.1:56954] PHP   6. Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->bootstrap() /var/www/html/ShopToy/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:213
+[Tue Jul 10 15:38:54.471865 2018] [:error] [pid 19463] [client 127.0.0.1:56954] PHP   7. date_default_timezone_set() /var/www/html/ShopToy/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php:49
