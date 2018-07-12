@@ -37,4 +37,8 @@ class PageController extends Controller
     {
         return view('page.gioithieu');
     }
+    public function testgit()
+    {
+        return view('page.gioithieu');
+    }
 }
