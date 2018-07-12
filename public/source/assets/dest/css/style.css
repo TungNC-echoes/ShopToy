@@ -1901,12 +1901,14 @@ line-height:35px
 }
 
 .flash-del {
-text-decoration:line-through;
-margin-right:10px
+    text-decoration:line-through;
+    margin-right:10px;
+    font-size: 18px
 }
 
 .flash-sale {
-color:#f90
+    color:#f90;
+    font-size: 18px
 }
 
 /* ==========================================================================
