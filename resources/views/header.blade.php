@@ -21,7 +21,7 @@
     <div class="header-body">
         <div class="container beta-relative">
             <div class="pull-left">
-                <a href="index.html" id="logo"><img src="{{asset('source/assets/dest/images/logo-cake.png')}}" width="200px" alt=""></a>
+                <a href="{{route('trang-chu')}}" id="logo"><img src="{{asset('source/assets/dest/images/logo-cake.png')}}" width="200px" alt=""></a>
             </div>
             <div class="pull-right beta-components space-left ov">
                 <div class="space10">&nbsp;</div>
@@ -41,11 +41,16 @@
                         <div class="beta-dropdown cart-body">
                                 @foreach($product_cart as $product)
                                     <div class="cart-item">
+                                        <a href="{{route('xoagiohang', $product['item']['id'])}}" class="cart-item-delete"><i class="fa fa-times"></i></a>
                                         <div class="media">
                                             <a class="pull-left" href="#"><img src="source/image/product/{{$product['item']['image']}}" alt=""></a>
                                             <div class="media-body">
                                                 <span class="cart-item-title">{{$product['item']['name']}}</span>
-                                                <span class="cart-item-amount">{{$product['qty']}}*<span>{{$product['item']['unit_price']}}</span></span>
+                                                <span class="cart-item-amount">{{$product['qty']}}*<span>
+                                                        @if($product['item']['promotion_price'] == 0){{number_format($product['item']['unit_price'])}}
+                                                        @else {{number_format($product['item']['promotion_price'])}}
+                                                        @endif
+                                                    </span></span>
                                             </div>
                                         </div>
                                     </div>
@@ -56,7 +61,7 @@
 
                                 <div class="center">
                                     <div class="space10">&nbsp;</div>
-                                    <a href="checkout.html" class="beta-btn primary text-center">Đặt hàng <i class="fa fa-chevron-right"></i></a>
+                                    <a href="{{route('dathang')}}" class="beta-btn primary text-center">Đặt hàng <i class="fa fa-chevron-right"></i></a>
                                 </div>
                             </div>
                         </div>
