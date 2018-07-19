@@ -11,11 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('index', [
+
+Route::get('/', [
     'as' => 'trang-chu',
     'uses' => 'PageController@getIndex'
 ]);
@@ -43,4 +41,19 @@ Route::get('gioi-thieu', [
 Route::get('add-to-cart/{id}', [
     'as' => 'themgiohang',
     'uses' => 'PageController@getAddtoCart'
+]);
+
+Route::get('del-cart/{id}', [
+    'as' => 'xoagiohang',
+    'uses' => 'PageController@getDelItemCart'
+]);
+
+Route::get('dat-hang', [
+    'as' => 'dathang',
+    'uses' => 'PageController@getCheckout'
+]);
+
+Route::post('dat-hang', [
+    'as' => 'dathang',
+    'uses' => 'PageController@postCheckout'
 ]);
