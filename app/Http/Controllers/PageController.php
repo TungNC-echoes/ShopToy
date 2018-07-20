@@ -8,8 +8,11 @@ use App\Cart;
 use App\Customer;
 use App\Product;
 use App\ProductType;
+use App\User;
 use Illuminate\Http\Request;
 use App\Slide;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
 class PageController extends Controller
@@ -107,5 +110,75 @@ class PageController extends Controller
         }
         Session::forget('cart');
         return redirect()->back()->with('thongbao', 'Đặt hàng thành công!');
+    }
+
+    public function login(Request $req)
+    {
+        if($req->isMethod('POST')){
+            $this->validate($req,
+                [
+                    'email' => 'required|email',
+                    'password' => 'required|min:6|max:20'
+                ],
+                [
+                    'email.required' => 'Vui lòng nhập Email',
+                    'email.email' => 'Email không đúng định dạng',
+                    'password.required' => 'Vui lòng nhập mật khẩu',
+                    'password.min' => 'Mật khẩu có ít nhất 6 kí tự',
+                    'password.max' => 'Mật khẩu có nhiều nhất 20 kí tự'
+                ]
+            );
+            $credentials = array(
+                'email'=> $req->email,
+                'password' => $req->password
+            );
+            if (Auth::attempt($credentials)) {
+                return redirect()->back()->with(['flag' => 'success', 'message' => 'Đăng nhập thành công !!!']);
+            } else {
+                return redirect()->back()->with(['flag' => 'danger', 'message' => 'Đăng nhập không thành công !!!']);
+            }
+        }
+        return view('page.dangnhap');
+    }
+
+    public function getSignin()
+    {
+        return view('page.dangki');
+    }
+
+    public function postSignin(Request $req)
+    {
+        $this->validate($req,
+            [
+                'email' => 'required|email|unique:users,email',
+                'password' => 'required|min:6|max:20',
+                'full_name' => 'required',
+                're_password' => 'required|same:password'
+            ],
+            [
+                'email.required' => 'Vui lòng nhập email',
+                'email.email' => 'Không đúng định dạng email',
+                'email.unique' => 'Email đã có người sử dụng',
+                'password,require' => 'Vui lòng nhập mật khẩu',
+                're_password.same' => 'Password không giống nhau',
+                'password,min' => 'Password phải nhiều hơn 6 kí tự',
+                'massword,max' => 'Password phải ít hơn 20 kí tự',
+                'fullname.required' => 'Tên khồng được trống'
+            ]
+        );
+        $user = new User();
+        $user->full_name = $req->full_name;
+        $user->email = $req->email;
+        $user->password = Hash::make($req->password);
+        $user->phone = $req->phone;
+        $user->address = $req->address;
+        $user->save();
+        return redirect()->back()->with('thanhcong', 'Đã tạo tài khoản thành công');
+    }
+
+    public function getLogout()
+    {
+        Auth::logout();
+        return redirect()->route('trang-chu');
     }
 }
