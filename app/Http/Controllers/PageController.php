@@ -181,4 +181,10 @@ class PageController extends Controller
         Auth::logout();
         return redirect()->route('trang-chu');
     }
+
+    public function getSearch(Request $req)
+    {
+        $products = Product::where('name', 'like', '%'.$req->key.'%')->orWhere('unit_price', $req->key)->paginate(8);
+        return view('page.search', compact('products'));
+    }
 }
