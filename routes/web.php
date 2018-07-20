@@ -57,3 +57,27 @@ Route::post('dat-hang', [
     'as' => 'dathang',
     'uses' => 'PageController@postCheckout'
 ]);
+
+Route::any('dang-nhap', [
+    'as' => 'login',
+    'uses' => 'PageController@login'
+]);
+Route::get('dang-ki', [
+    'as' => 'signin',
+    'uses' => 'PageController@getSignin'
+]);
+
+Route::post('dang-ki', [
+    'as' => 'signin',
+    'uses' => 'PageController@postSignin'
+]);
+
+Route::get('dang-xuat', [
+    'as' => 'logout',
+    'uses' => 'PageController@getLogout'
+]);
+
+Route::get('search', [
+    'as' => 'search',
+    'uses' => 'PageController@getSearch'
+]);

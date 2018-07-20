@@ -2,13 +2,9 @@
 @section('content')
 <div class="inner-header">
     <div class="container">
-        <div class="pull-left">
+        <div class="pull-left" style="margin-bottom: 30px">
             <h6 class="inner-title">Đặt hàng</h6>
         </div>
-        <br>
-        @if(isset($thongbao)){{$thongbao}}
-        @endif
-        <h4 class="pull-left text-success"></h4>
         <div class="pull-right">
             <div class="beta-breadcrumb">
                 <a href="{{route('trang-chu')}}">Trang chủ</a> / <span>Đặt hàng</span>
@@ -26,6 +22,9 @@
         <form action="{{route('dathang')}}" method="post" class="beta-form-checkout">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
             <div class="row">
+                @if(Session::has('thongbao'))
+                    <div class="alert alert-success">{{Session::get('thongbao')}}</div>
+                @endif
                 <div class="col-sm-6">
                     <h4>Đặt hàng</h4>
                     <div class="space20">&nbsp;</div>
