@@ -133,7 +133,7 @@ class PageController extends Controller
                 'password' => $req->password
             );
             if (Auth::attempt($credentials)) {
-                return redirect()->back()->with(['flag' => 'success', 'message' => 'Đăng nhập thành công !!!']);
+                return redirect('/')->with(['flag' => 'success', 'message' => 'Đăng nhập thành công !!!']);
             } else {
                 return redirect()->back()->with(['flag' => 'danger', 'message' => 'Đăng nhập không thành công !!!']);
             }

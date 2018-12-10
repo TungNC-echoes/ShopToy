@@ -81,3 +81,13 @@ Route::get('search', [
     'as' => 'search',
     'uses' => 'PageController@getSearch'
 ]);
+
+Route::get('admin/user', [
+    'as' => 'user',
+    'uses' => 'UserController@getUser'
+]);
+
+Route::get('admin/user/{id}', [
+    'as' => 'user.edit',
+    'uses' => 'UserController@editUser'
+]);
